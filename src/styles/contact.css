@@ -1,0 +1,16 @@
+.contact-box {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-box p {
+  color: var(--muted);
+}
+
+.contact-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}

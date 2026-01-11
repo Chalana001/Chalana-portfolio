@@ -1,0 +1,35 @@
+.nav {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  padding: 16px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-logo {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.theme-btn {
+  border: none;
+  background: var(--card);
+  color: var(--text);
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}

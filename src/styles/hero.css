@@ -1,0 +1,43 @@
+.hero {
+  padding: 90px 10%;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 50px;
+  line-height: 1.2;
+}
+
+.hero-content span {
+  color: var(--primary);
+}
+
+.hero-title {
+  margin-top: 10px;
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.hero-desc {
+  margin-top: 20px;
+  max-width: 600px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+}
+
+.hero-social {
+  margin-top: 25px;
+  display: flex;
+  gap: 14px;
+  font-size: 24px;
+}
+
+.hero-social a {
+  color: var(--text);
+}

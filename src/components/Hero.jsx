@@ -25,6 +25,10 @@ export default function Hero() {
           <a className="btn" href="#contact">
             Contact Me
           </a>
+          <a className="btn" href="/Chalana-CV.pdf" download>
+            Download CV
+          </a>
+
         </div>
 
         <div className="hero-social">

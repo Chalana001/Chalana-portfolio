@@ -10,4 +10,10 @@
   border-radius: 14px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.2s ease;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+  border: 1px solid var(--primary);
 }

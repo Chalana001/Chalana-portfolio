@@ -12,7 +12,7 @@ const projects = [
   {
     title: "Website Project (Frontend)",
     desc: "A responsive business/shop website with modern sections and smooth UI. Mobile friendly.",
-    tags: ["React", "HTML", "CSS","JavaScript"],
+    tags: ["React", "HTML", "CSS", "JavaScript"],
     featured: false,
     img: "/web1.png",
     link: "https://pasti-restuarant.vercel.app/",
@@ -20,7 +20,7 @@ const projects = [
   {
     title: "Website Project (Full Stack)",
     desc: "Full stack website connected with backend API. Supports dynamic data handling and form features.",
-    tags: ["React","Spring Boot","Java","JavaScript", "API"],
+    tags: ["React", "Spring Boot", "Java", "JavaScript", "API"],
     featured: false,
     img: "/web2.png",
     link: "https://newron-tech-support-web-frontend.vercel.app/",
@@ -48,15 +48,18 @@ export default function Projects() {
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
 
-              <div className="tags">
-                {p.tags.map((t, i) => (
-                  <span key={i} className="tag">{t}</span>
-                ))}
+              <div className="project-footer">
+                <div className="tags">
+                  {p.tags.map((t, i) => (
+                    <span key={i} className="tag">{t}</span>
+                  ))}
+                </div>
+
+                <a className="btn small" href={p.link} target="_blank" rel="noreferrer">
+                  View
+                </a>
               </div>
 
-              <a className="btn small" href={p.link} target="_blank">
-                View
-              </a>
             </div>
           </a>
         ))}

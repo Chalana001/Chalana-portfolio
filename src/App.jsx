@@ -7,6 +7,8 @@ import Skills from "./components/Skills";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Tech from "./components/Tech";
+
 import "./styles/global.css";
 
 export default function App() {
@@ -21,6 +23,7 @@ export default function App() {
       <Navbar theme={theme} setTheme={setTheme} />
       <Hero />
       <About />
+      <Tech />
       <Projects />
       <Skills />
       <Services />

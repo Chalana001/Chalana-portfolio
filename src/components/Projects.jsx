@@ -15,7 +15,7 @@ const projects = [
     tags: ["React", "HTML", "CSS", "JavaScript"],
     featured: false,
     img: "/web1.png",
-    link: "https://pasti-restuarant.vercel.app/",
+    link: "https://pastimahiyangana.lk/",
   },
   {
     title: "Website Project (Full Stack)",

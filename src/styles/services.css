@@ -9,6 +9,55 @@
   padding: 18px;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✅ soft glow */
+.service-card:hover {
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 22px rgba(79, 140, 255, 0.22);
+}
+
+/* ✅ shine effect */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -65%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: 0.6s ease;
+}
+
+.service-card:hover::before {
+  left: 120%;
+}
+
+/* ✅ icon */
+.service-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: rgba(79, 140, 255, 0.15);
+  border: 1px solid rgba(79, 140, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.service-card h3 {
+  font-size: 18px;
 }
 
 .service-card p {

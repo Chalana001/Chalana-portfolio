@@ -1,45 +1,99 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
 import "../styles/hero.css";
 
 export default function Hero() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 25 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  };
+
   return (
     <header className="hero">
-      <div className="hero-content">
-        <h1>
+      <motion.div
+        className="hero-content"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
+        {/* Heading */}
+        <motion.h1 variants={item}>
           Hi, I’m <span>Chalana Wijesingha</span>
-        </h1>
+        </motion.h1>
 
-        <p className="hero-title">
+        {/* Title */}
+        <motion.p className="hero-title" variants={item}>
           Web Application Builder | React + Java
-        </p>
+        </motion.p>
 
-        <p className="hero-desc">
+        {/* Description */}
+        <motion.p className="hero-desc" variants={item}>
           I build modern websites and full-stack web applications with clean UI,
           strong performance, and professional deployment.
-        </p>
+        </motion.p>
 
-        <div className="hero-buttons">
-          <a className="btn primary" href="#projects">
+        {/* Buttons */}
+        <motion.div className="hero-buttons" variants={item}>
+          <motion.a
+            className="btn primary"
+            href="#projects"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
             View Projects
-          </a>
-          <a className="btn" href="#contact">
+          </motion.a>
+
+          <motion.a
+            className="btn"
+            href="#contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
             Contact Me
-          </a>
-          <a className="btn" href="/Chalana-CV.pdf" download>
+          </motion.a>
+
+          <motion.a
+            className="btn"
+            href="/Chalana-CV.pdf"
+            download
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
             Download CV
-          </a>
+          </motion.a>
+        </motion.div>
 
-        </div>
-
-        <div className="hero-social">
-          <a target="_blank" href="https://github.com/Chalana001">
+        {/* Social */}
+        <motion.div className="hero-social" variants={item}>
+          <motion.a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/Chalana001"
+            whileHover={{ y: -4, scale: 1.15 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <FaGithub />
-          </a>
-          <a target="_blank" href="https://www.linkedin.com/in/chalana-wijesingha">
+          </motion.a>
+
+          <motion.a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/chalana-wijesingha"
+            whileHover={{ y: -4, scale: 1.15 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <FaLinkedin />
-          </a>
-        </div>
-      </div>
+          </motion.a>
+        </motion.div>
+      </motion.div>
     </header>
   );
 }

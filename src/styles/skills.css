@@ -10,10 +10,36 @@
   border-radius: 14px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: 0.2s ease;
+  transition: 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
 }
 
+/* ✅ Glow + border */
 .skill:hover {
-  transform: translateY(-4px);
   border: 1px solid var(--primary);
+  box-shadow: 0 0 20px rgba(79, 140, 255, 0.22);
+}
+
+/* ✅ Shine animation overlay */
+.skill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: 0.55s ease;
+}
+
+.skill:hover::before {
+  left: 120%;
 }

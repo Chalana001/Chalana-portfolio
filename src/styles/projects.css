@@ -93,3 +93,69 @@
   border-radius: 10px;
   font-size: 12px;
 }
+/* ✅ Featured Badge */
+.featured-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(79, 140, 255, 0.18);
+  border: 1px solid rgba(79, 140, 255, 0.35);
+  color: var(--text);
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  z-index: 3;
+}
+
+/* ✅ Make card relative for badge */
+.project-card {
+  position: relative;
+}
+
+/* ✅ Image overlay (pro look) */
+.project-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 60%);
+  opacity: 0.65;
+  transition: 0.3s ease;
+}
+
+.project-card:hover .project-img::after {
+  opacity: 0.35;
+}
+
+/* ✅ Button alignment fix */
+.project-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn.small {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn.small::after {
+  content: " →";
+  display: inline-block;
+  transform: translateX(-6px);
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+.project-card:hover .btn.small::after {
+  transform: translateX(0px);
+  opacity: 1;
+}

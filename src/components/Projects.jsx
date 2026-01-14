@@ -1,4 +1,5 @@
 import "../styles/projects.css";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -28,18 +29,63 @@ const projects = [
 ];
 
 export default function Projects() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { staggerChildren: 0.12 } },
+  };
+
+  const card = {
+    hidden: { opacity: 0, y: 30, scale: 0.98 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <section className="section" id="projects">
-      <h2 className="section-title">Projects</h2>
+      <motion.h2
+        className="section-title"
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        Projects
+      </motion.h2>
 
-      <div className="projects-grid">
+      <motion.div
+        className="projects-grid"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {projects.map((p, index) => (
-          <a
+          <motion.a
+            key={index}
+            variants={card}
             className={`project-card ${p.featured ? "featured" : ""}`}
             href={p.link}
             target="_blank"
             rel="noreferrer"
+            whileHover={{ y: -10, scale: 1.01 }}
+            whileTap={{ scale: 0.98 }}
           >
+            {/* ✅ Featured badge */}
+            {p.featured && (
+              <motion.div
+                className="featured-badge"
+                initial={{ opacity: 0, scale: 0.7 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                ⭐ Featured
+              </motion.div>
+            )}
+
             <div className="project-img">
               <img src={p.img} alt={p.title} />
             </div>
@@ -51,19 +97,18 @@ export default function Projects() {
               <div className="project-footer">
                 <div className="tags">
                   {p.tags.map((t, i) => (
-                    <span key={i} className="tag">{t}</span>
+                    <span key={i} className="tag">
+                      {t}
+                    </span>
                   ))}
                 </div>
 
-                <a className="btn small" href={p.link} target="_blank" rel="noreferrer">
-                  View
-                </a>
+                <span className="btn small">View</span>
               </div>
-
             </div>
-          </a>
+          </motion.a>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

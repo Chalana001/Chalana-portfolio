@@ -33,3 +33,58 @@
   border-radius: 12px;
   cursor: pointer;
 }
+
+/* ✅ NEW */
+.nav-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.menu-btn {
+  display: none; /* desktop වල hide */
+  border: none;
+  background: var(--card);
+  color: var(--text);
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* ✅ MOBILE */
+@media (max-width: 768px) {
+  .nav {
+    padding: 14px 6%;
+  }
+
+  .menu-btn {
+    display: block; /* mobile වල show */
+  }
+
+  /* Links default hide */
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px 6%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    transform: translateY(-200%);
+    transition: 0.25s ease;
+  }
+
+  /* When open */
+  .nav-links.open {
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    margin: 0;
+    font-size: 16px;
+  }
+}

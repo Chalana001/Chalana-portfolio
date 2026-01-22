@@ -41,7 +41,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3>10+</h3>
+          <h3>5+</h3>
           <p>Projects Built</p>
         </motion.div>
 
